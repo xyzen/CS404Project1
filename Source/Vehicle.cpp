@@ -25,3 +25,9 @@ int Vehicle::getZipCode()
 {
   return zipCode;
 }
+
+bool Vehicle::getAvail()
+{
+  return avail;
+}
+  
