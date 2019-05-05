@@ -12,4 +12,3 @@ private:
 	void reheapify(unsigned int);
 	void heapify();
 };
-

@@ -33,6 +33,12 @@
     <ClCompile Include="MinHeap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Response.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Edge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vehicle.h">
@@ -48,6 +54,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MinHeap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Response.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Edge.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

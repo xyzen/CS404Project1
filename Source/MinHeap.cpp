@@ -1,6 +1,7 @@
 #include "MinHeap.h"
 
 void MinHeap::insert(Node* item) {
+	item->heap_index = heap.size - 1;
 	heap.push_back(item);
 	heapify();
 }
@@ -20,20 +21,20 @@ Node* MinHeap::poptop(Node*) {
 		right = 2 * parent + 2;
 		if (right < heap.size())
 		{
-			if (heap[right]->weight < heap[left]->weight)
+			if (heap[right]->cost < heap[left]->cost)
 				std::swap(right, left);
-			if (heap[left]->weight < heap[parent]->weight) {
+			if (heap[left]->cost < heap[parent]->cost) {
 				std::swap(heap[parent]->heap_index, heap[left]->heap_index);
 				std::swap(heap[parent], heap[left]);
 				parent = left;
 			}
-			else if (heap[right]->weight < heap[parent]->weight) {
+			else if (heap[right]->cost < heap[parent]->cost) {
 				std::swap(heap[parent]->heap_index, heap[right]->heap_index);
 				std::swap(heap[parent], heap[right]);
 				parent = right;
 			}
 		}
-		else if (heap[left]->weight < heap[parent]->weight)
+		else if (heap[left]->cost < heap[parent]->cost)
 		{
 			std::swap(heap[parent]->heap_index, heap[left]->heap_index);
 			std::swap(heap[parent], heap[left]);
@@ -53,7 +54,7 @@ void MinHeap::reheapify(unsigned int index) {
 	unsigned int 
 		child  = index,
 		parent = child / 2;
-	while (child && heap[child]->weight < heap[parent]->weight) {
+	while (child && heap[child]->cost < heap[parent]->cost) {
 		std::swap(heap[parent]->heap_index, heap[child]->heap_index);
 		std::swap(heap[parent], heap[child]);
 		parent /= 2;

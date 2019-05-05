@@ -2,15 +2,6 @@
 
 
 
-Vehicle::Vehicle()
-{
-}
-
-
-Vehicle::~Vehicle()
-{
-}
-
 int Vehicle::getID()
 {
   return ID;
