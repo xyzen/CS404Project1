@@ -1,4 +1,6 @@
 #pragma once
+#include "Vehicle.h"
+
 class Request
 {
 public:
