@@ -6,7 +6,7 @@ class MinHeap
 {
 public:
 	void insert(Node*);
-	Node* poptop(Node*);
+	Node* poptop();
 private:
 	std::vector<Node*> heap;
 	void reheapify(unsigned int);
