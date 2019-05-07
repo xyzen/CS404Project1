@@ -2,11 +2,10 @@
 
 // Insert a Node into the heap
 void MinHeap::insert(Node* item) {
-	// Add the item to the heap, and reheap
+	// Add the item to the heap, update its index, and reheap
 	heap.push_back(item);
-	heapify();
-	// Update item's heap index
 	item->heap_index = heap.size() - 1;
+	heapify();
 } // Returns nothing
 
 // Remove the lowest cost Node and return it
