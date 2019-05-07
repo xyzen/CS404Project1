@@ -68,13 +68,13 @@ void MinHeap::heapify() {
 
 // Reheap a Node by index specific index
 void MinHeap::reheapify(unsigned int index) {
-	unsigned int child  = index, parent = child / 2;
+	unsigned int child  = index, parent = (child - 1) / 2;
 	while (parent && heap[child]->cost < heap[parent]->cost) { 
 		// Child's key is less than parent's key, so swap the Nodes
 		std::swap(heap[parent]->heap_index, heap[child]->heap_index);
 		std::swap(heap[parent], heap[child]);
 		// Update relative variables
 		child = parent;
-		parent /= 2;
+		parent = (child - 1) / 2;
 	}
 }
