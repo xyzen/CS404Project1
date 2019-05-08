@@ -1,9 +1,7 @@
 #pragma once
 
-class Edge
+struct Edge
 {
-public:
-	Edge();
+	Edge(unsigned int from, unsigned int to, unsigned int weight);
 	unsigned int from, to, weight;
 };
-

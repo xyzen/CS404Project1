@@ -1,24 +1,9 @@
 #include "Vehicle.h"
 
-
-
-int Vehicle::getID()
-{
-  return ID;
+Vehicle::Vehicle() {
+	zip = 0; type = 0; ID = 0;
 }
 
-int Vehicle::getType()
-{
-  return type;
+Vehicle::Vehicle(unsigned int z, unsigned int t, unsigned int id) {
+	zip = z; type = t; ID = id;
 }
-
-int Vehicle::getZipCode()
-{
-  return zipCode;
-}
-
-bool Vehicle::getAvail()
-{
-  return avail;
-}
-  

@@ -1,16 +1,28 @@
 #pragma once
 #include <vector>
+#include <queue>
 #include "Vehicle.h"
 
-class Node
+struct Node
 {
-public:
+	// Constructor
 	Node(unsigned int zip);
-	void addAdjacency(Node* next, unsigned int cost);
-	unsigned int cost, predecessor, zipcode;
-	int heap_index = -1;
-	bool visited = false;
-	std::vector<Node*> adjacent;
-	std::vector<std::vector<Vehicle>*> vehicles;
+
+	// Primative members
+	unsigned int cost, zipcode, heap_index;
+	bool heaped, visited;
+
+	// Structured members
+	Node* predecessor;
+	std::queue<Vehicle> type1_vehicles, type2_vehicles, type3_vehicles;
+	std::vector<Node*> adjacencies;
 	std::vector<unsigned int> weights;
+	
+	// Graph-building methods
+	void addAdjacency(Node* next, unsigned int weight);
+	void addVehicle(unsigned int zip, unsigned int type, unsigned int ID);
+
+	// Dispatch methods
+	bool satisfies(unsigned int type);
+	Vehicle popVehicle(unsigned int type);
 };

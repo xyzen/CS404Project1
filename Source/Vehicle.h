@@ -1,17 +1,7 @@
 #pragma once
-class Vehicle
+struct Vehicle
 {
-public:
 	Vehicle();
-	~Vehicle();
-	int getID();
-	int getType();
-	int getZipCode();
-	bool getAvail();
-private:
-	int ID;
-	int type;
-	int zipCode;
-	bool avail;
+	Vehicle(unsigned int, unsigned int, unsigned int);
+	unsigned int zip, type, ID;
 };
-
