@@ -8,16 +8,25 @@ Graph::Graph(std::string edges_path, std::string vehicles_path) {
 
 void Graph::readEdges(std::string path) {
 	std::ifstream file(path);
+<<<<<<< HEAD
 	unsigned int from, to, weight;
 	while (file.good()){
 		file >> from;
 		file >> to;
 		file >> weight;
 		addEdge(to, from, weight);
+=======
+	if (file.fail())
+		return false;
+	unsigned int from, to, weight;
+	while (file.good()){
+
+>>>>>>> 72501ab31fd7c069f3f2b6ce6116f84a042e94c3
 	}
 }
 
 
+<<<<<<< HEAD
 void Graph::addEdge(unsigned int from, unsigned int to, unsigned int weight) {
 	if (!vertices.count(from))
 		vertices[from] = Node(from);
@@ -95,3 +104,20 @@ Response Graph::dispatchResponse(Vehicle request, Vehicle responder, Node* origi
 	}
 	return Response(request.type, request.zip, responder.ID, origin->cost, route);
 }
+=======
+/*
+Response Graph::getResponse(Request) {
+	 
+}
+
+
+Response Graph::createResponse(Vehicle, Node) {
+	
+}
+
+
+void Graph::expand(Node) {
+	
+}
+*/
+>>>>>>> 72501ab31fd7c069f3f2b6ce6116f84a042e94c3

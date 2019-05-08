@@ -62,3 +62,8 @@ Vehicle Node::popVehicle(unsigned int type) {
 		return result;
 	}
 }
+void Node::addVehicle(Vehicle* nVehicle)
+{
+	vehicles.push_back(nVehicle);
+
+}
