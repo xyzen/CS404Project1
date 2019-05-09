@@ -16,7 +16,7 @@ int main() {
 	Vehicle rq;
 
 	//Columns headers for the output file
-	output << "reqID" << "\t" << "reqType" << "\t" << "Zip" << "\t" << "vehID" << "\t" << "dist" << "\t" << "route" << std::endl;
+	output << "reqID" << "\t" << "reqType" << "\t" << "zip" << "\t" << "vehID" << "\t" << "dist" << "\t" << "route" << std::endl;
 
 	// Get requests, process them, and output responses
 	while (input >> reqID && input >> type && input >> zipcode) {
