@@ -1,5 +1,14 @@
 #include "Node.h"
 
+
+Node::Node() {
+	zipcode = 0;
+	cost = std::numeric_limits<unsigned int>::max();
+	heaped = false;
+	visited = false;
+}
+
+
 Node::Node(unsigned int zip) {
 	zipcode = zip;
 	cost = std::numeric_limits<unsigned int>::max();

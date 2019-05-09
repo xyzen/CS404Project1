@@ -44,9 +44,6 @@
     <ClCompile Include="Node.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Read in.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Response.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

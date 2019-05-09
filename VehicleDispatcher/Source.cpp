@@ -3,8 +3,8 @@
 #include <iostream>
 
 int main() {
-	Graph gr("edges.txt", "vehicles.txt");
-	std::fstream input("requests.txt"), output("responses.txt");
+	Graph gr("Edges.txt", "Vehicles.txt");
+	std::fstream input("Requests.txt"), output("Responses.txt");
 	unsigned int reqID, type, zipcode;
 	Vehicle rq;
 	while (input.good()) {

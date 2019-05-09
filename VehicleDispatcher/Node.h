@@ -6,6 +6,7 @@
 struct Node
 {
 	// Constructor
+	Node();
 	Node(unsigned int zip);
 
 	// Primative members

@@ -127,7 +127,6 @@
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="MinHeap.cpp" />
     <ClCompile Include="Node.cpp" />
-    <ClCompile Include="Read in.cpp" />
     <ClCompile Include="Response.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Vehicle.cpp" />
