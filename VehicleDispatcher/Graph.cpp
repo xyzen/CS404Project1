@@ -81,7 +81,7 @@ Response Graph::getResponse(Vehicle request) {
 			return dispatchResponse(request, next->popVehicle(type), next);
 		expand(next);
 	}
-	return Response(0,0,0,0,"");
+	return Response(0,0,0,0,0,"");
 }
 
 
@@ -93,5 +93,5 @@ Response Graph::dispatchResponse(Vehicle request, Vehicle responder, Node* origi
 		next = next->predecessor;
 		route += " -> " + next->zipcode;
 	}
-	return Response(request.type, request.zip, responder.ID, origin->cost, route);
+	return Response(request.ID request.type, request.zip, responder.ID, origin->cost, route);
 }
