@@ -61,5 +61,11 @@
     <Text Include="Request.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="Vehicle.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Edges.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -8,6 +8,7 @@ int main() {
 	unsigned int reqID, type, zipcode;
 	Vehicle rq;
 	while (input.good()) {
+		input >> reqID;
 		input >> type;
 		input >> zipcode;
 		rq = Vehicle(zipcode, type, reqID);

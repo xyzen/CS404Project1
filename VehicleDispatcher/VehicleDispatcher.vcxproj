@@ -132,7 +132,9 @@
     <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Edges.txt" />
     <Text Include="Request.txt" />
+    <Text Include="Vehicle.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
