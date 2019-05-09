@@ -26,6 +26,7 @@ private:
 	void addVehicle(unsigned int zip, unsigned int type, unsigned int ID);
 
 	void expand(Node* next);
+	void reset();
 
 	Response dispatchResponse(Vehicle request, Vehicle responder, Node* origin);
 };

@@ -6,6 +6,7 @@ Node::Node() {
 	cost = std::numeric_limits<unsigned int>::max();
 	heaped = false;
 	visited = false;
+	predecessor = nullptr;
 }
 
 
@@ -14,6 +15,7 @@ Node::Node(unsigned int zip) {
 	cost = std::numeric_limits<unsigned int>::max();
 	heaped = false;
 	visited = false;
+	predecessor = nullptr;
 }
 
 
@@ -60,16 +62,23 @@ Vehicle Node::popVehicle(unsigned int type) {
 	case(1):
 		result = type1_vehicles.front();
 		type1_vehicles.pop();
-		break;
+		return result;
 	case(2):
-		result = type1_vehicles.front();
-		type1_vehicles.pop();
-		break;
+		result = type2_vehicles.front();
+		type2_vehicles.pop();
+		return result;
 	case(3):
-		result = type1_vehicles.front();
-		type1_vehicles.pop();
-		break;
+		result = type3_vehicles.front();
+		type3_vehicles.pop();
+		return result;
 	default:
 		return result;
 	}
+}
+
+void Node::reset() {
+	cost = std::numeric_limits<unsigned int>::max();
+	heaped = false;
+	visited = false;
+	predecessor = nullptr;
 }

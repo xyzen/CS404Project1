@@ -31,12 +31,13 @@ void Graph::readVehicles(std::string path) {
 	std::ifstream file(path);
 	unsigned int zip, type, ID;
 	while (file.good()) {
+		file >> ID;
 		file >> type;
 		file >> zip;
-		file >> ID;
 		addVehicle(zip, type, ID);
 	}
 }
+
 
 
 void Graph::addVehicle(unsigned int zip, unsigned int type, unsigned int ID) {
@@ -81,17 +82,27 @@ Response Graph::getResponse(Vehicle request) {
 			return dispatchResponse(request, next->popVehicle(type), next);
 		expand(next);
 	}
+	reset();
 	return Response(0,0,0,0,0,"");
 }
 
 
 Response Graph::dispatchResponse(Vehicle request, Vehicle responder, Node* origin) {
-	std::string route = "";
-	Node *next = origin;
-	route += std::to_string(next->zipcode);
+	Node* next = origin;
+	std::string route = std::to_string(origin->zipcode);
 	while (next->predecessor != nullptr) {
 		next = next->predecessor;
-		route += " -> " + next->zipcode;
+		route += "->" + std::to_string(next->zipcode);
 	}
-	return Response(request.ID, request.type, request.zip, responder.ID, origin->cost, route);
+	Response r(request.ID, request.type, request.zip, responder.ID, origin->cost, route);
+	reset();
+	return r;
+}
+
+
+void Graph::reset() {
+	std::unordered_map<unsigned int, Node>::iterator i;
+	for (i = vertices.begin(); i != vertices.end(); ++i) {
+		i->second.reset();
+	}
 }

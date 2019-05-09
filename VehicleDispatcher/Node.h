@@ -22,6 +22,7 @@ struct Node
 	// Graph-building methods
 	void addAdjacency(Node* next, unsigned int weight);
 	void addVehicle(unsigned int zip, unsigned int type, unsigned int ID);
+	void reset();
 
 	// Dispatch methods
 	bool satisfies(unsigned int type);
