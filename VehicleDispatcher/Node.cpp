@@ -28,28 +28,45 @@ void Node::addAdjacency(Node* next, unsigned int weight) {
 void Node::addVehicle(unsigned int zip, unsigned int type, unsigned int ID) {
 	switch (type) {
 	case(1):
-		type1_vehicles.push(Vehicle(zip, type, ID));
+		ready1_vehicles.push(Vehicle(zip, type, ID));
 		break;
 	case(2):
-		type2_vehicles.push(Vehicle(zip, type, ID));
+		ready2_vehicles.push(Vehicle(zip, type, ID));
 		break;
 	case(3):
-		type3_vehicles.push(Vehicle(zip, type, ID));
+		ready3_vehicles.push(Vehicle(zip, type, ID));
 		break;
 	default:
 		break;
 	}
-} // Adds a vehicle to the Node based on type
+} // Adds a vehicle to the Node based on type\
+
+
+void Node::addBusyVehicle(Vehicle responder) {
+	switch (responder.type) {
+	case(1):
+		busy1_vehicles.push(responder);
+		break;
+	case(2):
+		busy2_vehicles.push(responder);
+		break;
+	case(3):
+		busy3_vehicles.push(responder);
+		break;
+	default:
+		break;
+	}
+} // Adds a busy vehicle to the Node based on type
 
 
 bool Node::satisfies(unsigned int type) {
 	switch (type) {
 	case(1):
-		return type1_vehicles.size();
+		return ready1_vehicles.size();
 	case(2):
-		return type2_vehicles.size();
+		return ready2_vehicles.size();
 	case(3):
-		return type3_vehicles.size();
+		return ready3_vehicles.size();
 	default:
 		return false;
 	}
@@ -60,16 +77,16 @@ Vehicle Node::popVehicle(unsigned int type) {
 	Vehicle result;
 	switch (type) {
 	case(1):
-		result = type1_vehicles.front();
-		type1_vehicles.pop();
+		result = ready1_vehicles.front();
+		ready1_vehicles.pop();
 		return result;
 	case(2):
-		result = type2_vehicles.front();
-		type2_vehicles.pop();
+		result = ready2_vehicles.front();
+		ready2_vehicles.pop();
 		return result;
 	case(3):
-		result = type3_vehicles.front();
-		type3_vehicles.pop();
+		result = ready3_vehicles.front();
+		ready3_vehicles.pop();
 		return result;
 	default:
 		return result;
@@ -82,3 +99,19 @@ void Node::reset() {
 	visited = false;
 	predecessor = nullptr;
 } // Resets Node for next search
+
+
+void Node::resetVehicles() {
+	while (busy1_vehicles.size()) {
+		ready1_vehicles.push(busy1_vehicles.front());
+		busy1_vehicles.pop();
+	}
+	while (busy2_vehicles.size()) {
+		ready2_vehicles.push(busy2_vehicles.front());
+		busy2_vehicles.pop();
+	}
+	while (busy3_vehicles.size()) {
+		ready3_vehicles.push(busy3_vehicles.front());
+		busy3_vehicles.pop();
+	}
+} // Moves all Vehicles from busy to ready

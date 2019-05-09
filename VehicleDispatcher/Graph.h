@@ -28,6 +28,7 @@ private:
 	// Graph searching functions
 	void expand(Node* next);
 	void reset();
+	void resetVehicles();
 
 	// Response creation
 	Response dispatchResponse(Vehicle request, Vehicle responder, Node* origin);

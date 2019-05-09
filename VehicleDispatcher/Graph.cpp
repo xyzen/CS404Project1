@@ -116,8 +116,11 @@ Response Graph::getResponse(Vehicle request) {
 		next = priority.poptop();
 
 		// If vehicle found, return response
-		if (next->satisfies(type))
-			return dispatchResponse(request, next->popVehicle(type), next);
+		if (next->satisfies(type)) {
+			Vehicle responder = next->popVehicle(type);
+			source->addBusyVehicle(responder);
+			return dispatchResponse(request, responder, next);
+		}
 
 		// Vehicle not found: expand Node
 		expand(next);
@@ -155,3 +158,12 @@ void Graph::reset() {
 		i->second.reset();
 	}
 } // Resets the graph for the next search
+
+
+void Graph::resetVehicles() {
+	std::unordered_map<unsigned int, Node>::iterator i;
+	for (i = vertices.begin(); i != vertices.end(); ++i) {
+		// Reset Vehicles for each Node in the Graph
+		i->second.resetVehicles();
+	}
+} // Moves Vehicles in all Nodes from busy to ready
