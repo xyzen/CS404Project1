@@ -16,7 +16,6 @@ int main() {
 			output << rq.ID << "\t" << rq.type << "\t" << rq.zip << "\t" << r.vehID << "\t" << r.route << std::endl;
 		else
 			output << rq.ID << "\t" << rq.type << "\t" << rq.zip << "\tNo vehicle available" << std::endl;
-
 	}
 	return 0;
 }

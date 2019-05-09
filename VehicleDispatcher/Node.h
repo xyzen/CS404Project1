@@ -17,10 +17,6 @@ struct Node
 	std::queue<Vehicle> type1_vehicles, type2_vehicles, type3_vehicles;
 	std::vector<Node*> adjacencies;
 	std::vector<unsigned int> weights;
-
-	void addAdjacency(Node* next, unsigned int cost);
-	void addVehicle(Vehicle* VehType);
-	unsigned int cost, predecessor, zipcode;
 	
 	// Graph-building methods
 	void addAdjacency(Node* next, unsigned int weight);

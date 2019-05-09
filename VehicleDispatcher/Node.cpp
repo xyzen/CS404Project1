@@ -7,10 +7,12 @@ Node::Node(unsigned int zip) {
 	visited = false;
 }
 
+
 void Node::addAdjacency(Node* next, unsigned int weight) {
 	adjacencies.push_back(next);
 	weights.push_back(weight);
 }
+
 
 void Node::addVehicle(unsigned int zip, unsigned int type, unsigned int ID) {
 	switch (type) {
