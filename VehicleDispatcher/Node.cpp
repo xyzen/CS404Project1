@@ -7,7 +7,7 @@ Node::Node() {
 	heaped = false;
 	visited = false;
 	predecessor = nullptr;
-}
+} // Constructs default Node
 
 
 Node::Node(unsigned int zip) {
@@ -16,13 +16,13 @@ Node::Node(unsigned int zip) {
 	heaped = false;
 	visited = false;
 	predecessor = nullptr;
-}
+} // Constructs Node based on arguments
 
 
 void Node::addAdjacency(Node* next, unsigned int weight) {
 	adjacencies.push_back(next);
 	weights.push_back(weight);
-}
+} // Adds an adjacency to the Node
 
 
 void Node::addVehicle(unsigned int zip, unsigned int type, unsigned int ID) {
@@ -39,7 +39,7 @@ void Node::addVehicle(unsigned int zip, unsigned int type, unsigned int ID) {
 	default:
 		break;
 	}
-}
+} // Adds a vehicle to the Node based on type
 
 
 bool Node::satisfies(unsigned int type) {
@@ -53,7 +53,7 @@ bool Node::satisfies(unsigned int type) {
 	default:
 		return false;
 	}
-}
+} // Returns true of vehicle type is available
 
 
 Vehicle Node::popVehicle(unsigned int type) {
@@ -74,11 +74,11 @@ Vehicle Node::popVehicle(unsigned int type) {
 	default:
 		return result;
 	}
-}
+} // Pops and returns the requested vehicle
 
 void Node::reset() {
 	cost = std::numeric_limits<unsigned int>::max();
 	heaped = false;
 	visited = false;
 	predecessor = nullptr;
-}
+} // Resets Node for next search

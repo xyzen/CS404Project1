@@ -19,14 +19,16 @@ private:
 	std::unordered_map<unsigned int, Node> vertices;
 	MinHeap priority;
 
+	// Graph building functions
 	void readEdges(std::string path);
 	void addEdge(unsigned int from, unsigned int to, unsigned int weight);
-
 	void readVehicles(std::string path);
 	void addVehicle(unsigned int zip, unsigned int type, unsigned int ID);
 
+	// Graph searching functions
 	void expand(Node* next);
 	void reset();
 
+	// Response creation
 	Response dispatchResponse(Vehicle request, Vehicle responder, Node* origin);
 };

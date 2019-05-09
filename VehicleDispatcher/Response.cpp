@@ -7,4 +7,4 @@ Response::Response(unsigned int xreqID, unsigned int xtype, unsigned int xzip, u
 	vehID = xvehID;
 	dist = xdist;
 	route = xroute;
-}
+} // Constructs Response based on passed arguments
