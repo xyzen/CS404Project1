@@ -15,6 +15,9 @@ int main() {
 	unsigned int reqID, type, zipcode;
 	Vehicle rq;
 
+	//Columns headers for the output file
+	output << "Req ID" << "  " << "Req type" << " " << "Req zip" << "    " << "Vehicle ID" << " " << "Distence" << "     " << "Rout" << std::endl;
+
 	// Get requests, process them, and output responses
 	while (input >> reqID && input >> type && input >> zipcode) {
 		// Create a request
